@@ -36,7 +36,10 @@ public class Line {
     }
 
     public double lengthOfLine(){
-        return point1.distanceBetweenPoints(point2);
+        int xDist = point1.horizontalDistanceBetweenPoints(point2);
+        int yDist = point1.verticalDistanceBetweenPoints(point2);
+        double lineLength = Math.sqrt(xDist*xDist + yDist*yDist);
+        return lineLength;
     }
 
 }

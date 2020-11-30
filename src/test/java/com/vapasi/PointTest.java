@@ -2,6 +2,7 @@ package com.vapasi;
 
 import org.junit.jupiter.api.Test;
 
+import static java.lang.Math.abs;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PointTest {
@@ -15,12 +16,22 @@ public class PointTest {
     }
 
     @Test
-    public void shouldReturnDistanceBetweenTwoPoints(){
-        double expected = 5.0;
+    public void shouldReturnHorizontalDistanceBetweenTwoPoints(){
+        int expected = 4;
         Point point1, point2;
         point1 = new Point(3,9);
         point2 = new Point(7,12);
-        double actual = point1.distanceBetweenPoints(point2);
+        int actual = point1.horizontalDistanceBetweenPoints(point2);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldReturnVerticalDistanceBetweenTwoPoints(){
+        int expected = 3;
+        Point point1, point2;
+        point1 = new Point(3,9);
+        point2 = new Point(7,12);
+        int actual = point1.verticalDistanceBetweenPoints(point2);
         assertEquals(expected, actual);
     }
 
